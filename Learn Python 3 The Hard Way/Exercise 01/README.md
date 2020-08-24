@@ -1,6 +1,6 @@
 # Exercise 01
 
-**A quick introduction to printing text to `stdout`.**
+**A Good First Program**
 
 ## Running this program
 

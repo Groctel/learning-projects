@@ -1,6 +1,6 @@
 # Exercise 03
 
-**A quick introduction to math.**
+**Numbers and Math**
 
 ## Running this program
 

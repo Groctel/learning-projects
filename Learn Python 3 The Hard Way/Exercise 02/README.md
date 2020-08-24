@@ -1,6 +1,6 @@
 # Exercise 02
 
-**A quick introduction to comments.**
+**Comments and Pound Characters**
 
 ## Running this program
 
