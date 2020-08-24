@@ -10,7 +10,7 @@ python3 ex8.py
 
 ## What I did
 
-I create a string with four formatting placeholders and used some functions to substitute those placeholders with data.
+I created a string with four formatting placeholders and used some functions to substitute those placeholders with data.
 
 ## What I learnt
 
