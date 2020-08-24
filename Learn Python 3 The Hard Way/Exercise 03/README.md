@@ -12,7 +12,7 @@ python3 ex3.py
 
 I wrote some `print` statements containing arithmetic and logic operations, which were printed with the text strings.
 
-## What I learned
+## What I learnt
 
 Python uses the following operators for doing arithmetic and logic operations:
 
