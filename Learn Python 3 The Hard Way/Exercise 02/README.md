@@ -1,6 +1,6 @@
 # Exercise 02
 
-**A quick introduction comments.**
+**A quick introduction to comments.**
 
 ## Running this program
 
