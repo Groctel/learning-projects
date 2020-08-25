@@ -1,0 +1,52 @@
+Constant Story "RUINS";
+Constant Headline "^An Interactive Worked Example^
+                   Copyright (x) 1999 by Angela M. Horns.^";
+
+Include "Parser";
+Include "VerbLib";
+
+Object Forest "~Great Plaza~"
+	with description
+		"Or so your notes call this low escarpment of limestone, but the
+		rainforest has claimed it back. Dark olive trees crowd in on all sides,
+		the air steams with the mist of a warm recent rain, midges hang in the
+		air. ~Structure 10~ is a shambles of masonry which might once have been a
+		burial pyramid, and little survives except stone-cut steps leading down
+		into darkness below.",
+	has light;
+
+Object -> mushroom "speckled mushroom"
+	with name 'speckled' 'mushroom' 'fungus' 'toadstool',
+		initial
+			"A speckled mushroom grows out of the sodden earth, on a long stalk.",
+		description
+			"The mushroom is capped with blotches, and you aren't at all sure it's
+			not a toadstool.",
+		after [;
+			Take:
+				if (self.planted) {
+					self.planted = false;
+					"You pick the mushroom, neatly cleaving its thin stalk.";
+				}
+				"You take the mushroom from the floor.";
+			Drop:
+				"The mushroom drops to the ground, battered slightly.";
+		],
+		before [;
+			Eat: if (random(100) <= 30) {
+				deadflag = true;
+				"The tiniest nibble is enough. It was a todastool, and a poisoned
+				one at that!";
+			}
+			"You nibble at one corner, but the curious taste repels you.";
+		],
+		planted true,
+	has edible;
+
+[ Initialise;
+	location = Forest;
+	"^^^Days of searching, days of thirsty hacking through the briars of the
+	forest, but at last your patience was rewarded. A discovery!^";
+];
+
+Include "Grammar";
