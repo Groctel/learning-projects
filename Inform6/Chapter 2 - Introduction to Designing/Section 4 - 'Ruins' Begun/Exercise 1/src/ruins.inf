@@ -17,30 +17,31 @@ Object Forest "~Great Plaza~"
 
 Object -> mushroom "speckled mushroom"
 	with name 'speckled' 'mushroom' 'fungus' 'toadstool',
-		initial
-			"A speckled mushroom grows out of the sodden earth, on a long stalk.",
-		description
-			"The mushroom is capped with blotches, and you aren't at all sure it's
-			not a toadstool.",
-		after [;
-			Take:
-				if (self.planted) {
-					self.planted = false;
-					"You pick the mushroom, neatly cleaving its thin stalk.";
-				}
-				"You take the mushroom from the floor.";
-			Drop:
-				"The mushroom drops to the ground, battered slightly.";
-		],
-		before [;
-			Eat: if (random(100) <= 30) {
+	initial
+		"A speckled mushroom grows out of the sodden earth, on a long stalk.",
+	description
+		"The mushroom is capped with blotches, and you aren't at all sure it's not
+		a toadstool.",
+	after [;
+		Take:
+			if (self.planted) {
+				self.planted = false;
+				"You pick the mushroom, neatly cleaving its thin stalk.";
+			}
+			"You take the mushroom from the floor.";
+		Drop:
+			"The mushroom drops to the ground, battered slightly.";
+	],
+	before [;
+		Eat:
+			if (random(100) <= 30) {
 				deadflag = true;
 				"The tiniest nibble is enough. It was a todastool, and a poisoned
 				one at that!";
 			}
 			"You nibble at one corner, but the curious taste repels you.";
-		],
-		planted true,
+	],
+	planted true,
 	has edible;
 
 [ Initialise;
