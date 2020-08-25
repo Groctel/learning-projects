@@ -5,7 +5,7 @@
 ## Running this program
 
 ```sh
-python3 ex20.py
+python3 ex20.py test_file.txt
 ```
 
 ## What I did
