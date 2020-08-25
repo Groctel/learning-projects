@@ -10,7 +10,7 @@ python3 ex23.py utf-8 strict
 
 ## What I did
 
-I create a program that reads a file line by line with `readline` and performed the following operations with it in `print_line`:
+I created a program that reads a file line by line with `readline` and performed the following operations with it in `print_line`:
 
 - I used `strip` to remove the trailing linefeed character.
 - I used `encode` to extract the bytes that form the line string.
