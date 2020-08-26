@@ -1,0 +1,29 @@
+Constant Story "TESTING ROOM";
+Constant Headline "^Your room to experiment!^
+                   Licensed under GPL 2.0 by Atanasio ~Groctel~ Rubio Gil^";
+
+Include "Parser";
+Include "VerbLib";
+
+Object Room "The testing room"
+	with description
+		"You are in a big illuminated square white room."
+	has light
+;
+
+Object -> black_door "door"
+	with name
+		'black' 'door',
+	initial
+		"A black door stands in the center of the room.",
+	description
+		"It's a simple black door you can open and pass through.",
+	door_to Room,
+	has door openable static
+;
+
+[ Initialise;
+	location = Room;
+];
+
+Include "Grammar";
