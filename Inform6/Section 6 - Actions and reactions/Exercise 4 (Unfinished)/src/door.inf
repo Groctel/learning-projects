@@ -1,0 +1,55 @@
+Constant Story "TESTING ROOM";
+Constant Headline "^Your room to experiment!^
+                   Licensed under GPL 2.0 by Atanasio ~Groctel~ Rubio Gil^";
+
+Include "Parser";
+Include "VerbLib";
+
+Object Room "The testing room"
+	with description
+		"You are in a big illuminated square white room.",
+	has light
+;
+
+Object -> black_door "door"
+	with name
+		'black' 'door',
+	initial
+		"A black door stands in the center of the room.",
+	description
+		"It's a simple black door you can open and pass through.",
+	before [;
+		Open:
+			objectloop (x) print (name) x, " ";
+	],
+	door_to Room,
+	with_key simple_key,
+	has door lockable locked openable static
+;
+
+Object -> fancy_key "fancy key"
+	with name
+		'fancy' 'gold' 'key',
+	description
+		"A fancy gold key",
+;
+
+Object -> obsidian_key "obsidian_key"
+	with name
+		'heavy' 'key' 'obsidian',
+	description
+		"A heavy obsidian key",
+;
+
+Object -> simple_key "simple key"
+	with name
+		'key' 'simple' 'small',
+	description
+		"A small simple key",
+;
+
+[ Initialise;
+	location = Room;
+];
+
+Include "Grammar";
