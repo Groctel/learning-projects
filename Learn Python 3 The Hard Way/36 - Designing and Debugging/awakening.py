@@ -14,8 +14,62 @@ def examine(room, item):
     else:
         not_in_room(item)
 
-def living_room(interact=True):
-    print("You exit the pantry and enter a big living room with")
+def living_room():
+    player_life   = 100
+    troll_life    = 100
+    troll_counter = 3
+
+    print("You exit the pantry and enter a big living room with a troll...")
+    print("IT ENGAGES YOU IN DEADLY COMBAT! IT'S TIME TO FIGHT FOR YOUR LIFE!")
+
+    while troll_life > 0 and player_life > 0:
+        print("\n[PLAYER: {} HP]", player_life)
+        print("[TROLL: {} HP]", troll_life)
+        print("What would you like to do?")
+        print("- 1: Attack!")
+        print("- 2: Defend!")
+        print("- 3: Flee!")
+
+        choice = input("> ")
+
+        print()
+
+        if choice == "1":
+            troll_life -= 10
+            print("You deal 10 damage to the troll")
+        elif choice == "2":
+            print("You defend yourself against the troll's attacks...")
+        elif choice == "3":
+            print("You try to flee but there's nowhere to hide!")
+        else:
+            print("Invalid option...")
+
+        if troll_life > 0:
+            if troll_counter == 3 or troll_counter == 2:
+                print("The troll prepares an attack...")
+            elif troll_counter == 1:
+                print("The troll's attack is imminent!")
+            else:
+                print("The troll discharges its anger against your bones!")
+
+                if choice == "2":
+                    print("But you manage to resis its strength!")
+                else:
+                    player_life -= 50
+
+        if troll_counter == 0:
+            troll_counter = 3
+        else:
+            troll_counter -= 1
+
+    if troll_life <= 0:
+        print("You managed to defeat the troll. Congratulations!")
+        print("Thanks for playing!")
+    else:
+        print("The troll managed to crush you.")
+        print("Better luck next time!")
+
+    exit(0)
 
 def missing_noun(query):
     print(f"I only understood as far as you wanting to {query}.")
