@@ -5,7 +5,7 @@
 ## Running this program
 
 ```sh
-python3 ex35.py
+python3 awakening.py
 ```
 
 ## What I did
